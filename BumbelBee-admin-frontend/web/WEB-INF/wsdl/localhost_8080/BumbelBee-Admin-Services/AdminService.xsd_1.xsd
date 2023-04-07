@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (https://github.com/eclipse-ee4j/metro-jax-ws). RI's version is Eclipse Metro/2.4.8 (RELEASE-2.4.8-e044505; 2022-01-04T13:29:23+0000) JAXWS-RI/2.3.5 JAXWS-API/2.3.3 JAXB-RI/2.3.5 JAXB-API/2.3.3 git-revision#e044505. --><xs:schema xmlns:tns="http://Services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Services/">
+
+<xs:element name="addProduct" type="tns:addProduct"/>
+
+<xs:element name="addProductResponse" type="tns:addProductResponse"/>
+
+<xs:element name="deleteProductById" type="tns:deleteProductById"/>
+
+<xs:element name="deleteProductByIdResponse" type="tns:deleteProductByIdResponse"/>
+
+<xs:element name="getAllCustomers" type="tns:getAllCustomers"/>
+
+<xs:element name="getAllCustomersResponse" type="tns:getAllCustomersResponse"/>
+
+<xs:element name="getAllProducts" type="tns:getAllProducts"/>
+
+<xs:element name="getAllProductsJson" type="tns:getAllProductsJson"/>
+
+<xs:element name="getAllProductsJsonResponse" type="tns:getAllProductsJsonResponse"/>
+
+<xs:element name="getAllProductsResponse" type="tns:getAllProductsResponse"/>
+
+<xs:element name="getCustomerById" type="tns:getCustomerById"/>
+
+<xs:element name="getCustomerByIdResponse" type="tns:getCustomerByIdResponse"/>
+
+<xs:element name="getProductById" type="tns:getProductById"/>
+
+<xs:element name="getProductByIdResponse" type="tns:getProductByIdResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="loginAdmin" type="tns:loginAdmin"/>
+
+<xs:element name="loginAdminResponse" type="tns:loginAdminResponse"/>
+
+<xs:element name="product" type="tns:product"/>
+
+<xs:element name="updateInformation" type="tns:updateInformation"/>
+
+<xs:element name="updateProduct" type="tns:updateProduct"/>
+
+<xs:complexType name="loginAdmin">
+<xs:sequence>
+<xs:element name="username" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginAdminResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllProducts">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllProductsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:product" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="count" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:double"/>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteProductById">
+<xs:sequence>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteProductByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCustomerById">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCustomerByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllCustomers">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllCustomersResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateInformation">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="fulName" type="xs:string" minOccurs="0"/>
+<xs:element name="dob" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="customerId" type="xs:int"/>
+<xs:element name="maxLoan" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateProduct">
+<xs:sequence>
+<xs:element name="productId" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:double"/>
+<xs:element name="count" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProduct">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:double"/>
+<xs:element name="count" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addProductResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductById">
+<xs:sequence>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllProductsJson">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllProductsJsonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

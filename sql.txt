@@ -1,0 +1,50 @@
+CREATE database BumbelBee;
+USE BumbelBee;
+CREATE TABLE admin(
+	username VARCHAR(30) UNIQUE NOT NULL,
+  	password_hash VARCHAR(200) NOT NULL,
+	CONSTRAINT  ADMIN_PK PRIMARY KEY(username)
+);
+INSERT INTO admin VALUES ('Admin','202cb962ac59075b964b07152d234b70');
+
+CREATE TABLE product(
+	product_id INT UNIQUE NOT NULL AUTO_INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	price DECIMAL(7,2) NOT NULL,
+	count INT NOT NULL,
+	CONSTRAINT PRODUCT_PK PRIMARY KEY(product_id)
+)
+
+CREATE TABLE customer(
+	customer_id INT NOT NULL AUTO_INCREMENT UNIQUE,
+	ful_name VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	dob VARCHAR(11) NOT NULL,
+	password_hash VARCHAR(300) NOT NULL,
+	max_loan DECIMAL(10,2)NOT NULL,
+	CONSTRAINT CUSTOMER_PK PRIMARY KEY(customer_id)
+);
+
+CREATE TABLE loan(
+	loan_id INT UNIQUE NOT NULL AUTO_INCREMENT,
+	customer_id INT NOT NULL,
+	date VARCHAR(11) NOT NULL,
+	product_id INT NOT NULL,
+	CONSTRAINT LOAN_PK PRIMARY KEY(loan_id),
+	CONSTRAINT LOAN_OWNER_FK FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
+	CONSTRAINT LOAN_ITEM_FK FOREIGN KEY (product_id) REFERENCES product(product_id)
+)
+CREATE TABLE installment(
+	loan_id INT NOT NULL,
+	number INT NOT NULL,
+	paid INT,
+	due_date VARCHAR(11) NOT NULL,
+	CONSTRAINT INSTALLMENT_PK PRIMARY KEY(loan_id,number),
+	CONSTRAINT INSTALLMENT_LOAN_FK FOREIGN KEY(loan_id) REFERENCES loan(loan_id)
+)
+CREATE TABLE cart (
+    customer_id INT NOT NULL,
+    product_id INT NOT NULL,
+    qty INT NOT NULL,
+	CONSTRAINT CART_PK PRIMARY KEY (customer_id,product_id)
+)

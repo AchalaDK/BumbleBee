@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (https://github.com/eclipse-ee4j/metro-jax-ws). RI's version is Eclipse Metro/2.4.8 (RELEASE-2.4.8-e044505; 2022-01-04T13:29:23+0000) JAXWS-RI/2.3.5 JAXWS-API/2.3.3 JAXB-RI/2.3.5 JAXB-API/2.3.3 git-revision#e044505. --><xs:schema xmlns:tns="http://Services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Services/">
+
+<xs:element name="addCartItem" type="tns:addCartItem"/>
+
+<xs:element name="checkEligibility" type="tns:checkEligibility"/>
+
+<xs:element name="checkEligibilityResponse" type="tns:checkEligibilityResponse"/>
+
+<xs:element name="deleteCartItem" type="tns:deleteCartItem"/>
+
+<xs:element name="getAllLoans" type="tns:getAllLoans"/>
+
+<xs:element name="getAllLoansResponse" type="tns:getAllLoansResponse"/>
+
+<xs:element name="getAllProducts" type="tns:getAllProducts"/>
+
+<xs:element name="getAllProductsJson" type="tns:getAllProductsJson"/>
+
+<xs:element name="getAllProductsJsonResponse" type="tns:getAllProductsJsonResponse"/>
+
+<xs:element name="getAllProductsResponse" type="tns:getAllProductsResponse"/>
+
+<xs:element name="getLoan" type="tns:getLoan"/>
+
+<xs:element name="getLoanResponse" type="tns:getLoanResponse"/>
+
+<xs:element name="getLoggedPerson" type="tns:getLoggedPerson"/>
+
+<xs:element name="getLoggedPersonResponse" type="tns:getLoggedPersonResponse"/>
+
+<xs:element name="getPaidInstallments" type="tns:getPaidInstallments"/>
+
+<xs:element name="getPaidInstallmentsResponse" type="tns:getPaidInstallmentsResponse"/>
+
+<xs:element name="getProductById" type="tns:getProductById"/>
+
+<xs:element name="getProductByIdResponse" type="tns:getProductByIdResponse"/>
+
+<xs:element name="getUnpaidLoans" type="tns:getUnpaidLoans"/>
+
+<xs:element name="getUnpaidLoansResponse" type="tns:getUnpaidLoansResponse"/>
+
+<xs:element name="getcart" type="tns:getcart"/>
+
+<xs:element name="getcartResponse" type="tns:getcartResponse"/>
+
+<xs:element name="loginCustomer" type="tns:loginCustomer"/>
+
+<xs:element name="loginCustomerResponse" type="tns:loginCustomerResponse"/>
+
+<xs:element name="payLoan" type="tns:payLoan"/>
+
+<xs:element name="placeLoan" type="tns:placeLoan"/>
+
+<xs:element name="placeLoanResponse" type="tns:placeLoanResponse"/>
+
+<xs:element name="registerCustomer" type="tns:registerCustomer"/>
+
+<xs:element name="registerCustomerResponse" type="tns:registerCustomerResponse"/>
+
+<xs:element name="updateInformation" type="tns:updateInformation"/>
+
+<xs:complexType name="getProductById">
+<xs:sequence>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductByIdResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getUnpaidLoans">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getUnpaidLoansResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateInformation">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="fulName" type="xs:string" minOccurs="0"/>
+<xs:element name="dob" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoan">
+<xs:sequence>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoanResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllLoans">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllLoansResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkEligibility">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+<xs:element name="total" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="checkEligibilityResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLoggedPerson">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getLoggedPersonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registerCustomer">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="dob" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registerCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteCartItem">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllProductsJson">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllProductsJsonResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="placeLoan">
+<xs:sequence>
+<xs:element name="cuustomerId" type="xs:int"/>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="placeLoanResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCartItem">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+<xs:element name="productId" type="xs:int"/>
+<xs:element name="qty" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getcart">
+<xs:sequence>
+<xs:element name="customerId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getcartResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="payLoan">
+<xs:sequence>
+<xs:element name="loanId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getAllProducts">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getAllProductsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:product" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="product">
+<xs:sequence>
+<xs:element name="count" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="price" type="xs:double"/>
+<xs:element name="productId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPaidInstallments">
+<xs:sequence>
+<xs:element name="loanId" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPaidInstallmentsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginCustomer">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
